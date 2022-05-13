@@ -1,4 +1,6 @@
-﻿namespace PasswordManagerAPI.Models
+﻿using System.Collections.Generic;
+
+namespace PasswordManagerAPI.Models
 {
     public class Service
     {
@@ -6,5 +8,10 @@
         public string Name { get; set; }
         // Questionable practice
         public string Image { get; set; }
+        public ICollection<Account> Accounts { get; set; }
+        public Service()
+        {
+            Accounts = new HashSet<Account>();
+        }
     }
 }
